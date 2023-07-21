@@ -12,4 +12,6 @@ import java.util.List;
 @Repository
 public interface ProductRepo extends JpaRepository<Product, Long> {
     List<Product> findByProductPriceGreaterThan(BigDecimal price);
+
+    Product findByProductId(Integer id);
 }

@@ -21,14 +21,14 @@ public class Product {
     @Column(name = "productId", unique = true, nullable = false)
     private Long productId;
 
-    @Column(name = "productName", unique = true, nullable = false, length = 100)
+    @Column(name = "productName", unique = false, nullable = false, length = 100)
     private String productName;
 
     @Column(name = "productPrice", nullable = false)
     private BigDecimal productPrice;
 
     //technically optional but still needed to save data
-    @Column(name = "category_id", nullable = false)
+    @Column(name = "category_id")
     private Long category_id;
 
 }

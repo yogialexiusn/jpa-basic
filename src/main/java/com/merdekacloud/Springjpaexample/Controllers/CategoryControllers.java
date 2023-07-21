@@ -1,5 +1,8 @@
 package com.merdekacloud.Springjpaexample.Controllers;
 
+import com.merdekacloud.Springjpaexample.Biz.AddingData;
+import com.merdekacloud.Springjpaexample.Dto.CategoryAddRequest;
+import com.merdekacloud.Springjpaexample.Dto.CategoryAddResponse;
 import com.merdekacloud.Springjpaexample.Entity.Category;
 import com.merdekacloud.Springjpaexample.Repository.CategoryRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +18,9 @@ public class CategoryControllers {
     @Autowired
     CategoryRepo categoryRepo;
 
+    @Autowired
+    AddingData addingData;
+
     @GetMapping("/category")
     public List<Category> getAllCategories(){
         return categoryRepo.findAll();
@@ -28,6 +34,11 @@ public class CategoryControllers {
 
     @PostMapping("/category")
     public Category saveACategory(@RequestBody Category category){ return categoryRepo.save(category);}
+
+    @PostMapping("/category/tambah")
+    public CategoryAddResponse addingData(@RequestBody CategoryAddRequest category){
+        return addingData.addingDataCategory(category);
+    }
 
     @PutMapping("/category")
     public Category updateCategory(@RequestBody Category category){
