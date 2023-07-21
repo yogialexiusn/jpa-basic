@@ -1,6 +1,6 @@
 package com.merdekacloud.Springjpaexample.Dto;
 
-public class CategoryAddRequest {
+public class AddingRequest {
     private String item;
 
     public String getItem() {

@@ -1,7 +1,7 @@
 package com.merdekacloud.Springjpaexample.Controllers;
 
 import com.merdekacloud.Springjpaexample.Biz.AddingData;
-import com.merdekacloud.Springjpaexample.Dto.CategoryAddRequest;
+import com.merdekacloud.Springjpaexample.Dto.AddingRequest;
 import com.merdekacloud.Springjpaexample.Dto.CategoryAddResponse;
 import com.merdekacloud.Springjpaexample.Entity.Category;
 import com.merdekacloud.Springjpaexample.Repository.CategoryRepo;
@@ -36,7 +36,7 @@ public class CategoryControllers {
     public Category saveACategory(@RequestBody Category category){ return categoryRepo.save(category);}
 
     @PostMapping("/category/tambah")
-    public CategoryAddResponse addingData(@RequestBody CategoryAddRequest category){
+    public CategoryAddResponse addingData(@RequestBody AddingRequest category){
         return addingData.addingDataCategory(category);
     }
 
